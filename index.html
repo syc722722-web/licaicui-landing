@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>瑞丽市栗璨珠宝店 · 源头翡翠定制</title>
+<style>
+  :root {
+    --green: #0d7a4a;
+    --green-light: #e8f5ee;
+    --gold: #b8860b;
+    --gold-light: #faf3e0;
+    --dark: #1a1a2e;
+    --text: #2d2d2d;
+    --text-light: #666;
+    --bg: #fafafa;
+    --card: #ffffff;
+    --border: #e8e8e8;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, #0d7a4a 0%, #0a5c38 100%);
+    color: #fff;
+    padding: 60px 20px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 150px; height: 150px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .sub {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .shop-name {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== Trust Bar ===== */
+  .trust-bar {
+    display: flex;
+    justify-content: space-around;
+    background: var(--card);
+    padding: 16px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-item {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-light);
+  }
+  .trust-item .num {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 2px;
+  }
+
+  /* ===== Section ===== */
+  .section {
+    padding: 40px 20px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  /* ===== Product Grid ===== */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .product-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .product-card .img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 12px;
+  }
+  .product-card .info {
+    padding: 10px 12px 14px;
+  }
+  .product-card .info .name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .product-card .info .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--green);
+  }
+  .product-card .info .price small {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-light);
+  }
+
+  /* ===== Service Flow ===== */
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--card);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .flow-step .step-num {
+    width: 32px; height: 32px;
+    background: var(--green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .flow-step .step-text h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .flow-step .step-text p {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+
+  /* ===== Certificates ===== */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .cert-item {
+    background: var(--card);
+    padding: 14px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .cert-item .icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  .cert-item .label {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* ===== Why Us ===== */
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .why-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .why-item .check {
+    width: 22px; height: 22px;
+    background: var(--green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .why-item .txt {
+    font-size: 14px;
+  }
+
+  /* ===== Contact ===== */
+  .contact {
+    background: linear-gradient(135deg, #0d7a4a 0%, #0a5c38 100%);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .contact p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 20px;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--green);
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+  .contact-btn:active {
+    transform: scale(0.97);
+  }
+  .contact .hint {
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+  }
+  .footer .shop {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (min-width: 480px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .cert-grid { grid-template-columns: repeat(4, 1fr); }
+    .hero h1 { font-size: 34px; }
+    .section { padding: 50px 40px; }
+  }
+  @media (min-width: 768px) {
+    body { max-width: 430px; margin: 0 auto; box-shadow: 0 0 30px rgba(0,0,0,0.08); min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<div class="hero">
+  <div class="hero-badge">📍 云南 · 瑞丽 · 源头直供</div>
+  <h1>源头翡翠 · 私人定制</h1>
+  <p class="sub">从矿区到指尖，每一件都是独一无二的承诺</p>
+  <div class="shop-name">🏪 瑞丽市栗璨珠宝店</div>
+</div>
+
+<!-- ===== Trust Bar ===== -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="num">10+</span>年行业经验</div>
+  <div class="trust-item"><span class="num">5000+</span>位信任客户</div>
+  <div class="trust-item"><span class="num">100%</span>天然翡翠</div>
+  <div class="trust-item"><span class="num">一物一证</span>国检证书</div>
+</div>
+
+<!-- ===== About ===== -->
+<div class="section">
+  <div class="section-title">关于栗璨珠宝</div>
+  <div class="section-sub">扎根瑞丽源头，十年如一日</div>
+  <p style="font-size:14px; color:var(--text-light); line-height:1.8; text-align:center; max-width:360px; margin:0 auto;">
+    瑞丽市栗璨珠宝店位于云南省德宏州瑞丽市——中国最大的翡翠原石集散地。<br><br>
+    我们专注翡翠手镯、蛋面、挂件、镶嵌等全品类定制服务，<br>
+    从毛料选材到成品交付，全程透明可追溯。<br><br>
+    <strong style="color:var(--green);">十万以上的货，老板亲自飞过去送货。</strong><br>
+    这不是炫耀服务，而是完成每一份信任的交接。
+  </p>
+</div>
+
+<!-- ===== Products ===== -->
+<div class="section">
+  <div class="section-title">热门定制品类</div>
+  <div class="section-sub">自然光实拍 · 不夸大种水 · 不隐瞒瑕疵</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="img">📷 翡翠手镯</div>
+      <div class="info">
+        <div class="name">翡翠手镯 · 定制</div>
+        <div class="price">¥2,800 <small>起</small></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="img">📷 翡翠蛋面</div>
+      <div class="info">
+        <div class="name">翡翠蛋面 · 镶嵌</div>
+        <div class="price">¥1,500 <small>起</small></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="img">📷 翡翠挂件</div>
+      <div class="info">
+        <div class="name">翡翠挂件 · 雕刻</div>
+        <div class="price">¥1,200 <small>起</small></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="img">📷 翡翠原石</div>
+      <div class="info">
+        <div class="name">翡翠原石 · 选料</div>
+        <div class="price">¥3,000 <small>起</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Custom Process ===== -->
+<div class="section" style="background:var(--green-light); border-radius:20px 20px 0 0;">
+  <div class="section-title">定制流程</div>
+  <div class="section-sub">四步拥有属于你的翡翠</div>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h3>沟通需求</h3>
+        <p>告诉我们你的预算、款式偏好、圈口尺寸等细节</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h3>选料报价</h3>
+        <p>根据需求匹配毛料，自然光实拍视频确认，明码报价</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h3>加工制作</h3>
+        <p>资深师傅精工细作，过程实时反馈，每一步都让你看见</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h3>交付验收</h3>
+        <p>国检证书齐全，支持视频验货，不满意无条件沟通</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Certificates ===== -->
+<div class="section">
+  <div class="section-title">资质保障</div>
+  <div class="section-sub">一物一证，全程可追溯</div>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <div class="icon">📜</div>
+      <div class="label">国检NGTC证书</div>
+    </div>
+    <div class="cert-item">
+      <div class="icon">🔍</div>
+      <div class="label">支持复检</div>
+    </div>
+    <div class="cert-item">
+      <div class="icon">📸</div>
+      <div class="label">自然光实拍</div>
+    </div>
+    <div class="cert-item">
+      <div class="icon">🛡️</div>
+      <div class="label">顺丰保价</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Why Us ===== -->
+<div class="section" style="background:var(--gold-light); border-radius:0 0 20px 20px;">
+  <div class="section-title">为什么选择栗璨？</div>
+  <div class="section-sub">信任，是翡翠行业最大的成本</div>
+  <div class="why-list">
+    <div class="why-item">
+      <div class="check">✓</div>
+      <div class="txt"><strong>源头价格</strong> — 瑞丽市场一手货源，无中间商差价</div>
+    </div>
+    <div class="why-item">
+      <div class="check">✓</div>
+      <div class="txt"><strong>真实拍摄</strong> — 自然光实拍，所见即所得</div>
+    </div>
+    <div class="why-item">
+      <div class="check">✓</div>
+      <div class="txt"><strong>不欺不瞒</strong> — 种水瑕疵如实告知，不藏不掩</div>
+    </div>
+    <div class="why-item">
+      <div class="check">✓</div>
+      <div class="txt"><strong>老板直送</strong> — 十万以上订单，老板亲自送货上门</div>
+    </div>
+    <div class="why-item">
+      <div class="check">✓</div>
+      <div class="txt"><strong>售后无忧</strong> — 专业养护指导，长期复购优惠</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== High Value Note ===== -->
+<div class="section" style="text-align:center; padding-top:20px; padding-bottom:20px;">
+  <div style="background:linear-gradient(135deg,#1a1a2e,#2d2d5e); color:#fff; padding:24px; border-radius:var(--radius);">
+    <div style="font-size:14px; opacity:0.7; margin-bottom:6px;">⚡ 高货专享</div>
+    <div style="font-size:18px; font-weight:700;">十万以上的货，我不发快递</div>
+    <div style="font-size:13px; opacity:0.7; margin-top:8px;">老板亲自坐飞机送到你手上<br>这不是服务，是信任的交接仪式</div>
+  </div>
+</div>
+
+<!-- ===== Contact ===== -->
+<div class="contact">
+  <h2>💬 立即咨询定制</h2>
+  <p>长按识别二维码，或搜索微信号添加</p>
+  <a class="contact-btn" href="weixin://">
+    💬 添加微信咨询
+  </a>
+  <div class="hint">微信号：添加时请备注"翡翠定制"</div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+  <div class="shop">瑞丽市栗璨珠宝店</div>
+  <div>📍 云南省德宏州瑞丽市</div>
+  <div style="margin-top:6px;">© 2026 瑞丽市栗璨珠宝店 · 所有图片均为实物拍摄</div>
+</div>
+
+</body>
+</html>
